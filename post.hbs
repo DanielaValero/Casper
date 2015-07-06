@@ -22,11 +22,16 @@
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <p class="post-time-read"></p>
             </section>
         </header>
 
         <section class="post-content">
             {{content}}
+        </section>
+
+        <section class="post-comments">
+            <div id="post_{{id}}_comments"></div>
         </section>
 
         <footer class="post-footer">
@@ -95,5 +100,12 @@
     </a>
     {{/prev_post}}
 </aside>
+
+<script>(function () {
+    var c = document.getElementById('post_{{id}}_comments'),
+    w = c.offsetWidth;c.innerHTML = '<div class="g-comments" data-href="{{@blog.url}}{{url}}" data-width="' + w + '" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD"></div>';})();
+    </script>
+<script src="https://apis.google.com/js/client:platform.js" async defer>
+</script>
 
 {{/post}}
