@@ -6,14 +6,7 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-</header>
+{{> postHeading}}
 
 <main class="content" role="main">
     <article class="{{post_class}}">
@@ -22,16 +15,11 @@
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
-                <p class="post-time-read"></p>
             </section>
         </header>
 
         <section class="post-content">
             {{content}}
-        </section>
-
-        <section class="post-comments">
-            <div id="post_{{id}}_comments"></div>
         </section>
 
         <footer class="post-footer">
@@ -79,6 +67,11 @@
 
         </footer>
 
+
+        <section class="post-comments">
+            <div id="post_{{id}}_comments"></div>
+        </section>
+
     </article>
 </main>
 
@@ -100,6 +93,7 @@
     </a>
     {{/prev_post}}
 </aside>
+
 
 <script>(function () {
     var c = document.getElementById('post_{{id}}_comments'),

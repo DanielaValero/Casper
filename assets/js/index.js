@@ -3,8 +3,24 @@
  */
 
 /* globals jQuery, document */
-(function($, undefined) {
+(function ($, undefined) {
     "use strict";
+
+    var $document = $(document);
+
+    $document.ready(function () {
+
+        var $postContent = $(".post-content");
+        $postContent.fitVids();
+
+        $(".scroll-down").arctic_scroll();
+
+        $(".menu-button, .nav-cover, .nav-close").on("click", function (e) {
+            e.preventDefault();
+            $("body").toggleClass("nav-opened nav-closed");
+        });
+    });
+
 
     var $document = $(document);
 
@@ -16,30 +32,9 @@
         return '<b>Est. time read: </b>' + minutes;
     };
 
-    $document.ready(function() {
-
-        var $postContent = $(".post-content");
-        $postContent.fitVids();
-
-        var pageText = $postContent.text().replace(/\r?\n/g, '');
-        var $postTimeRead = $('.post-time-read');
-
-        if ($postTimeRead) {
-            $postTimeRead.append(' ' + read_time(pageText) + '');
-        }
-
-        $(".scroll-down").arctic_scroll();
-
-        $(".menu-button, .nav-cover, .nav-close").on("click", function(e) {
-            e.preventDefault();
-            $("body").toggleClass("nav-opened nav-closed");
-        });
-
-    });
-
     // Arctic Scroll by Paul Adam Davis
     // https://github.com/PaulAdamDavis/Arctic-Scroll
-    $.fn.arctic_scroll = function(options) {
+    $.fn.arctic_scroll = function (options) {
 
         var defaults = {
                 elem: $(this),
@@ -48,7 +43,7 @@
 
             allOptions = $.extend(defaults, options);
 
-        allOptions.elem.click(function(event) {
+        allOptions.elem.click(function (event) {
             event.preventDefault();
             var $this = $(this),
                 $htmlBody = $('html, body'),
@@ -72,6 +67,7 @@
                 }, allOptions.speed);
             }
         });
-
     };
+
+
 })(jQuery);

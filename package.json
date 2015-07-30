@@ -1,4 +1,12 @@
 {
-  "name": "Casper",
-  "version": "1.2.4"
+  "name": "pimpedCasper",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-cli": "^0.3.0",
+    "gulp-less": "^3.0.3",
+     "purify-css": "^1.0.17",
+     "csscomb": "3.0.4"
+  }
 }
