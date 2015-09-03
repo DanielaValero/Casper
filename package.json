@@ -1,12 +1,24 @@
 {
   "name": "pimpedCasper",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanielaValero/DanielaValero.git"
+  },
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "csscomb": "3.0.4",
+    "del": "^1.2.0",
     "gulp-autoprefixer": "^2.3.1",
-    "gulp-cli": "^0.3.0",
     "gulp-less": "^3.0.3",
-     "purify-css": "^1.0.17",
-     "csscomb": "3.0.4"
+    "gulp-purifycss": "^0.2.0",
+    "purify-css": "^1.0.17"
+  },
+  "dependencies": {
+    "each-async": "^1.0.0",
+    "globby": "^2.0.0",
+    "is-path-cwd": "^1.0.0",
+    "is-path-in-cwd": "^1.0.0",
+    "object-assign": "^2.0.0",
+    "rimraf": "^2.2.8"
   }
 }
