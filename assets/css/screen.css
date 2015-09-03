@@ -1176,6 +1176,8 @@ pagination prev/next links *//* ================================================
   border-style: solid;
   border-radius: 3px;
   border-width: 1px;
+  max-width: 30%;
+  float: right;
 }
 .subscribe-button:before {
   font-size: 9px;
@@ -1199,6 +1201,9 @@ End of file. Animations should be the last thing here. Do not add stuff
 below this point, or it will probably fuck everything up.
 ========================================================================== */
 @media only screen and (max-width: 900px) {
+  .subscribe-button {
+ max-width: 100%;
+}
 .main-header {
  box-sizing: border-box;
  height: auto;

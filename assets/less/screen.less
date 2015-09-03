@@ -1589,6 +1589,8 @@ body:not(.post-template) .post-title {
     border-style: solid;
     border-radius: 3px;
     border-width: 1px;
+    max-width: 30%;
+    float: right;
 }
 .subscribe-button:before {
     font-size: 9px;
@@ -1603,8 +1605,10 @@ body:not(.post-template) .post-title {
 /* ==========================================================================
    11. Media Queries - Smaller than 900px
    ========================================================================== */
-
 @media only screen and (max-width: 900px) {
+    .subscribe-button {
+        max-width: 100%;
+    }
 
     blockquote {
         margin-left: 0;
@@ -1741,8 +1745,8 @@ body:not(.post-template) .post-title {
    12. Media Queries - Smaller than 500px
    ========================================================================== */
 
-@media only screen and (max-width: 500px) {
 
+@media only screen and (max-width: 500px) {
     .main-header {
         margin-bottom: 15px;
         height: 40vh;
